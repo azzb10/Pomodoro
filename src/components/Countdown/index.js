@@ -26,11 +26,18 @@ const Countdown = ({valueMinutes, valueSeconds}) => {
 
   return (
     <View>
-      <Text>
+      <Text style={styles.counter}>
         {minutes}:{('00' + seconds).slice(-2)}
       </Text>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  counter: {
+    color: '#fff',
+    fontSize: 70,
+  },
+});
 
 export default Countdown;
