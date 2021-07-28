@@ -7,7 +7,7 @@ const LongPause = () => {
     <View style={styles.container}>
       <Text>Long Pause</Text>
       <View style={styles.countBackground}>
-        <Countdown valueMinutes={20} valueSeconds={0} />
+        <Countdown valueMinutes={30} valueSeconds={0} />
       </View>
     </View>
   );

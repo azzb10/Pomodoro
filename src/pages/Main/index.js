@@ -5,12 +5,17 @@ const Main = () => {
   return (
     <View style={styles.container}>
       <Text>Start Pomodoro</Text>
-      <TouchableOpacity
-        style={styles.button}
-        //onPress={}
-      >
-        <Text>Start Pomodoro</Text>
-      </TouchableOpacity>
+      <View style={styles.introduction}>
+        <Text>
+          introduction
+        </Text>
+        <TouchableOpacity
+          style={styles.button}
+          //onPress={}
+        >
+          <Text>Start Pomodoro</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -18,7 +23,18 @@ const Main = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ddd',
+    backgroundColor: '#e67e22',
+  },
+  introduction: {
+    width: '90%',
+    height: '80%',
+    backgroundColor: '#fff',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    marginTop: 100,
+    borderRadius: 20,
   },
   button: {
     backgroundColor: '#e74c3c',
