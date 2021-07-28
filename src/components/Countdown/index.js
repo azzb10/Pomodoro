@@ -1,32 +1,36 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const Countdown = () => {
-  const [count, setCount] = useState(25);
-  const countdown = () => {
-    setCount(count => count - 1);
+const Countdown = ({valueMinutes, valueSeconds}) => {
+  const [seconds, setSeconds] = useState(valueSeconds);
+  const [minutes, setMinutes] = useState(valueMinutes);
+
+  const countdownSeconds = () => {
+    setSeconds(seconds => seconds - 1);
   };
 
   useEffect(() => {
     setInterval(() => {
-      countdown();
+      countdownSeconds();
     }, 1000);
   }, []);
 
+  if (seconds < 0) {
+    setSeconds(59);
+    if (minutes <= 0) {
+      setMinutes(25);
+    } else {
+      setMinutes(minutes => minutes - 1);
+    }
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Working</Text>
-      <View style={styles.countBackground}>
-        <Text>{count}</Text>
-      </View>
+    <View>
+      <Text>
+        {minutes}:{('00' + seconds).slice(-2)}
+      </Text>
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default Countdown;

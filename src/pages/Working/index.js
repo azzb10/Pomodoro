@@ -7,7 +7,7 @@ const Working = () => {
     <View style={styles.container}>
       <Text>Working</Text>
       <View style={styles.countBackground}>
-        <Countdown />
+        <Countdown valueMinutes={25} valueSeconds={0} />
       </View>
     </View>
   );
