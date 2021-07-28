@@ -9,9 +9,10 @@
 import React from 'react';
 
 import Main from './pages/Main';
+import Working from './pages/Working';
 
 const App = () => {
-  return <Main />;
+  return <Working />;
 };
 
 export default App;
