@@ -9,10 +9,10 @@
 import React from 'react';
 
 import Main from './pages/Main';
-import SmallPause from './pages/SmallPause';
+import LongPause from './pages/LongPause';
 
 const App = () => {
-  return <SmallPause />;
+  return <LongPause />;
 };
 
 export default App;

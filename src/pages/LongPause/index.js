@@ -2,12 +2,12 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import Countdown from '../../components/Countdown';
 
-const SmallPause = () => {
+const LongPause = () => {
   return (
     <View style={styles.container}>
-      <Text>Small Pause</Text>
+      <Text>Long Pause</Text>
       <View style={styles.countBackground}>
-        <Countdown valueMinutes={5} valueSeconds={0} />
+        <Countdown valueMinutes={20} valueSeconds={0} />
       </View>
     </View>
   );
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   countBackground: {
     width: '90%',
     height: '70%',
-    backgroundColor: '#3498db',
+    backgroundColor: '#2ecc71',
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
@@ -31,4 +31,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SmallPause;
+export default LongPause;
