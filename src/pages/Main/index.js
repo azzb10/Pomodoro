@@ -1,16 +1,13 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+
+import PageHeader from '../../components/PageHeader';
 import LottieComponent from '../../components/LottieComponent';
 
 const Main = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.pageHeader}>
-        <Text style={styles.title}>MyPomodoro</Text>
-        <Text style={styles.subtitle}>
-          Beat procrastination and improve your focus one pomodoro at a time.
-        </Text>
-      </View>
+      <PageHeader />
       <View style={styles.introduction}>
         <View style={styles.animation}>
           <LottieComponent

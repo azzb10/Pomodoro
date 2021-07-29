@@ -1,12 +1,24 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+
+import assets from '../../assets/assets';
 import Countdown from '../../components/Countdown';
+import LottieComponent from '../../components/LottieComponent';
 
 const SmallPause = () => {
+  const item = assets.gif3;
   return (
     <View style={styles.container}>
-      <Text>Small Pause</Text>
+      <View style={styles.pageHeader}>
+        <Text style={styles.title}>Small Pause</Text>
+        <Text style={styles.subtitle}>
+          Take a 5 minutes break from your task
+        </Text>
+      </View>
       <View style={styles.countBackground}>
+        <View style={styles.animation}>
+          <LottieComponent item={item} />
+        </View>
         <Countdown valueMinutes={5} valueSeconds={0} />
       </View>
     </View>
@@ -16,19 +28,35 @@ const SmallPause = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ddd',
+    backgroundColor: '#3498db',
+  },
+  pageHeader: {
+    margin: 30,
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 35,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  subtitle: {
+    fontSize: 14,
+    color: '#fff',
   },
   countBackground: {
     width: '90%',
-    height: '70%',
-    backgroundColor: '#3498db',
+    height: '60%',
+    backgroundColor: '#fff',
     alignSelf: 'center',
-    justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
-    marginTop: 100,
+    margin: 60,
     borderRadius: 20,
+    justifyContent: 'space-between',
+  },
+  animation: {
+    height: '60%',
+    width: '100%',
   },
 });
-
 export default SmallPause;
