@@ -36,7 +36,7 @@ const Countdown = ({valueMinutes, valueSeconds}) => {
 
 const styles = StyleSheet.create({
   counter: {
-    color: '#fff',
+    color: '#000',
     fontSize: 70,
   },
 });

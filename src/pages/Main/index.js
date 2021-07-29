@@ -13,7 +13,9 @@ const Main = () => {
       </View>
       <View style={styles.introduction}>
         <View style={styles.animation}>
-          <LottieComponent />
+          <LottieComponent
+            item={require('../../assets/64627-time-management-lottie-animation.json')}
+          />
         </View>
         <TouchableOpacity
           style={styles.button}

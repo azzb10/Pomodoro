@@ -1,14 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import LottieView from 'lottie-react-native';
 
-const LottieComponent = () => {
+const LottieComponent = ({item}) => {
+
   return (
-    <LottieView
-      source={require('../../assets/64627-time-management-lottie-animation.json')}
-      autoPlay
-      loop
-    />
-  );
-};
+  <LottieView source={item} autoPlay loop />
+)};
 
 export default LottieComponent;

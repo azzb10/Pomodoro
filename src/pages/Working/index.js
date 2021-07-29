@@ -20,14 +20,13 @@ const styles = StyleSheet.create({
   },
   countBackground: {
     width: '90%',
-    height: '70%',
-    backgroundColor: '#e74c3c',
+    height: '60%',
+    backgroundColor: '#fff',
     alignSelf: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
     padding: 20,
-    marginTop: 100,
+    margin: 60,
     borderRadius: 20,
+    justifyContent: 'space-between',
   },
 });
 
