@@ -1,14 +1,19 @@
 import React from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import LottieComponent from '../../components/LottieComponent';
 
 const Main = () => {
   return (
     <View style={styles.container}>
-      <Text>Start Pomodoro</Text>
+      <View style={{height: '5%'}}></View>
       <View style={styles.introduction}>
         <Text>
-          introduction
+          The Pomodoro Technique is a time management method for students,
+          perfectionists, and procrastinators of all kinds
         </Text>
+        <View style={styles.animation}>
+          <LottieComponent />
+        </View>
         <TouchableOpacity
           style={styles.button}
           //onPress={}
@@ -30,10 +35,7 @@ const styles = StyleSheet.create({
     height: '80%',
     backgroundColor: '#fff',
     alignSelf: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
     padding: 20,
-    marginTop: 100,
     borderRadius: 20,
   },
   button: {
@@ -46,6 +48,10 @@ const styles = StyleSheet.create({
     borderRadius: 80,
     width: 250,
     height: 80,
+  },
+  animation: {
+    height: '50%',
+    width: '100%',
   },
 });
 
