@@ -5,12 +5,13 @@ import LottieComponent from '../../components/LottieComponent';
 const Main = () => {
   return (
     <View style={styles.container}>
-      <View style={{height: '5%'}}></View>
-      <View style={styles.introduction}>
-        <Text>
-          The Pomodoro Technique is a time management method for students,
-          perfectionists, and procrastinators of all kinds
+      <View style={styles.pageHeader}>
+        <Text style={styles.title}>MyPomodoro</Text>
+        <Text style={styles.subtitle}>
+          Beat procrastination and improve your focus one pomodoro at a time.
         </Text>
+      </View>
+      <View style={styles.introduction}>
         <View style={styles.animation}>
           <LottieComponent />
         </View>
@@ -30,13 +31,28 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#e67e22',
   },
+  pageHeader: {
+    margin: 30,
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 35,
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+  subtitle: {
+    fontSize: 14,
+    color: '#fff',
+  },
   introduction: {
     width: '90%',
-    height: '80%',
+    height: '60%',
     backgroundColor: '#fff',
     alignSelf: 'center',
     padding: 20,
+    margin: 60,
     borderRadius: 20,
+    justifyContent: 'space-between',
   },
   button: {
     backgroundColor: '#e74c3c',
@@ -50,7 +66,7 @@ const styles = StyleSheet.create({
     height: 80,
   },
   animation: {
-    height: '50%',
+    height: '60%',
     width: '100%',
   },
 });
