@@ -11,7 +11,7 @@ import React from 'react';
 import {Main, SmallPause, LongPause, Working} from './pages';
 
 const App = () => {
-  return <Working />;
+  return <Main />;
 };
 
 export default App;
