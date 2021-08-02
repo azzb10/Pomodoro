@@ -14,7 +14,7 @@ const SmallPause = () => {
           subtitle="Take a 5 minutes break from your task"
         />
       </View>
-      <Card item={item} minutes={20} color="#3498db" />
+      <Card item={item} minutes={5} color="#3498db" />
     </View>
   );
 };

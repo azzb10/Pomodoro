@@ -7,12 +7,11 @@
  */
 
 import React from 'react';
-import Working from './pages/Working';
 
-import Main from './pages/Main';
+import {Main, SmallPause, LongPause, Working} from './pages';
 
 const App = () => {
-  return <Main />;
+  return <Working />;
 };
 
 export default App;
