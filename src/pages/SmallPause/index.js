@@ -1,25 +1,24 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import assets from '../../assets/assets';
-import Countdown from '../../components/Countdown';
-import LottieComponent from '../../components/LottieComponent';
+import {PageHeader, LottieComponent, Countdown} from '../../components';
 
 const SmallPause = () => {
   const item = assets.gif3;
   return (
     <View style={styles.container}>
       <View style={styles.pageHeader}>
-        <Text style={styles.title}>Small Pause</Text>
-        <Text style={styles.subtitle}>
-          Take a 5 minutes break from your task
-        </Text>
+        <PageHeader
+          title="Small Pause"
+          subtitle="Take a 5 minutes break from your task"
+        />
       </View>
       <View style={styles.countBackground}>
         <View style={styles.animation}>
           <LottieComponent item={item} />
         </View>
-        <Countdown valueMinutes={5} valueSeconds={0} />
+        <Countdown minutes={5} color="#3498db" />
       </View>
     </View>
   );
@@ -33,15 +32,6 @@ const styles = StyleSheet.create({
   pageHeader: {
     margin: 30,
     justifyContent: 'center',
-  },
-  title: {
-    fontSize: 35,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
-  subtitle: {
-    fontSize: 14,
-    color: '#fff',
   },
   countBackground: {
     width: '90%',

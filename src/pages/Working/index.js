@@ -1,24 +1,24 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
+
 import assets from '../../assets/assets';
-import Countdown from '../../components/Countdown';
-import LottieComponent from '../../components/LottieComponent';
+import {PageHeader, LottieComponent, Countdown} from '../../components';
 
 const Working = () => {
   const item = assets.gif2;
   return (
     <View style={styles.container}>
       <View style={styles.pageHeader}>
-        <Text style={styles.title}>Working</Text>
-        <Text style={styles.subtitle}>
-          Focus on the work until the clock stops
-        </Text>
+        <PageHeader
+          title="Working"
+          subtitle="Focus on the work until the clock stops"
+        />
       </View>
       <View style={styles.countBackground}>
         <View style={styles.animation}>
           <LottieComponent item={item} />
         </View>
-        <Countdown valueMinutes={25} valueSeconds={0} />
+        <Countdown minutes={25} color="#8feea1" />
       </View>
     </View>
   );
@@ -32,15 +32,6 @@ const styles = StyleSheet.create({
   pageHeader: {
     margin: 30,
     justifyContent: 'center',
-  },
-  title: {
-    fontSize: 35,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
-  subtitle: {
-    fontSize: 14,
-    color: '#fff',
   },
   countBackground: {
     width: '90%',

@@ -1,22 +1,16 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const PageHeader = () => {
+const PageHeader = ({title, subtitle}) => {
   return (
-    <View style={styles.pageHeader}>
-      <Text style={styles.title}>MyPomodoro</Text>
-      <Text style={styles.subtitle}>
-        Beat procrastination and improve your focus one pomodoro at a time.
-      </Text>
+    <View>
+      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.subtitle}>{subtitle}</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  pageHeader: {
-    margin: 30,
-    justifyContent: 'center',
-  },
   title: {
     fontSize: 35,
     fontWeight: 'bold',

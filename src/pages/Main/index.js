@@ -7,7 +7,12 @@ import LottieComponent from '../../components/LottieComponent';
 const Main = () => {
   return (
     <View style={styles.container}>
-      <PageHeader />
+      <View style={styles.pageHeader}>
+        <PageHeader
+          title="MyPomodoro"
+          subtitle="Beat procrastination and improve focus one pomodoro at a time"
+        />
+      </View>
       <View style={styles.introduction}>
         <View style={styles.animation}>
           <LottieComponent
@@ -33,15 +38,6 @@ const styles = StyleSheet.create({
   pageHeader: {
     margin: 30,
     justifyContent: 'center',
-  },
-  title: {
-    fontSize: 35,
-    fontWeight: 'bold',
-    color: '#fff',
-  },
-  subtitle: {
-    fontSize: 14,
-    color: '#fff',
   },
   introduction: {
     width: '90%',

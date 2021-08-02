@@ -1,18 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import CountDown from 'react-native-countdown-component';
 
-const Countdown = ({valueMinutes, valueSeconds}) => {
+const Countdown = ({minutes, color}) => {
   return (
     <View>
       <CountDown
-        until={60 * 10 + 30}
+        until={60 * minutes}
         size={30}
         onFinish={() => alert('Finished')}
-        digitStyle={styles.counterBackground}
+        digitStyle={[styles.counterStyle, {borderColor: color}]}
         digitTxtStyle={styles.counterText}
         timeToShow={['M', 'S']}
-        timeLabels={{m: 'MM', s: 'SS'}}
+        timeLabels={{m: 'Min', s: 'Sec'}}
       />
     </View>
   );
@@ -20,10 +20,11 @@ const Countdown = ({valueMinutes, valueSeconds}) => {
 
 const styles = StyleSheet.create({
   counterText: {
-    color: '#fff',
-  },
-  counterBackground: {
     color: '#000',
+  },
+  counterStyle: {
+    backgroundColor: '#FFF',
+    borderWidth: 2,
   },
 });
 
