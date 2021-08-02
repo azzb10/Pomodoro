@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   counterStyle: {
-    backgroundColor: '#FFF',
+    backgroundColor: '#fffefe',
     borderWidth: 2,
   },
 });
