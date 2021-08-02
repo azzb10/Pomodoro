@@ -1,4 +1,4 @@
-package com.pomodorous;
+package com.MyPomodoro;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "Pomodorous";
+    return "MyPomodoro";
   }
 }

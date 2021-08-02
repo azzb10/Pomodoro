@@ -3,7 +3,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'Pomodorous' do
+target 'MyPomodoro' do
   config = use_native_modules!
 
   use_react_native!(
@@ -12,7 +12,7 @@ target 'Pomodorous' do
     :hermes_enabled => false
   )
 
-  target 'PomodorousTests' do
+  target 'MyPomodoroTests' do
     inherit! :complete
     # Pods for testing
   end

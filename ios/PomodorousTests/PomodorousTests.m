@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface PomodorousTests : XCTestCase
+@interface MyPomodoroTests : XCTestCase
 
 @end
 
-@implementation PomodorousTests
+@implementation MyPomodoroTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {
