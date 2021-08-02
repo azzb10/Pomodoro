@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet} from 'react-native';
 
 import assets from '../../assets/assets';
-import {PageHeader, LottieComponent, Countdown, Card} from '../../components';
+import {PageHeader, Card} from '../../components';
 
 const LongPause = () => {
   const item = assets.gif4;
@@ -14,9 +14,7 @@ const LongPause = () => {
           subtitle="Take a 15 - 30 minutes break from your task"
         />
       </View>
-      <View>
-        <Card item={item} minutes={20} color="#e74c3c" />
-      </View>
+      <Card item={item} minutes={20} color="#e74c3c" />
     </View>
   );
 };
