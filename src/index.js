@@ -12,7 +12,7 @@ import Working from './pages/Working';
 import Main from './pages/Main';
 
 const App = () => {
-  return <Working />;
+  return <Main />;
 };
 
 export default App;

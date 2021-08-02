@@ -14,7 +14,7 @@ const Card = ({item, minutes = null, color, button = false, text = null}) => {
           style={[styles.button, {backgroundColor: color}]}
           //onPress={}
         >
-          <Text>{text}</Text>
+          <Text style={styles.buttonText}>{text}</Text>
         </TouchableOpacity>
       </View>
     );
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignSelf: 'center',
     alignItems: 'center',
-    padding: 10,
+    padding: 20,
     margin: 40,
     borderRadius: 20,
     justifyContent: 'space-between',
@@ -47,14 +47,16 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   button: {
-    margin: 20,
-    padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
-    alignSelf: 'center',
     borderRadius: 80,
     width: '80%',
-    height: '80%',
+    height: '15%',
+  },
+  buttonText: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#fff',
   },
 });
 

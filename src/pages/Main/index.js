@@ -1,10 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
-import PageHeader from '../../components/PageHeader';
-import LottieComponent from '../../components/LottieComponent';
+import {PageHeader, Card} from '../../components';
+import assets from '../../assets/assets';
 
 const Main = () => {
+  const item = assets.gif1;
+
   return (
     <View style={styles.container}>
       <View style={styles.pageHeader}>
@@ -13,19 +15,7 @@ const Main = () => {
           subtitle="Beat procrastination and improve focus one pomodoro at a time"
         />
       </View>
-      <View style={styles.introduction}>
-        <View style={styles.animation}>
-          <LottieComponent
-            item={require('../../assets/64627-time-management-lottie-animation.json')}
-          />
-        </View>
-        <TouchableOpacity
-          style={styles.button}
-          //onPress={}
-        >
-          <Text>Start Pomodoro</Text>
-        </TouchableOpacity>
-      </View>
+      <Card item={item} color="#e74c3c" button={true} text="Start Pomodoro" />
     </View>
   );
 };
