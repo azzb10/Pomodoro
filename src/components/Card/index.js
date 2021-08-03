@@ -1,10 +1,14 @@
 import React from 'react';
 import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import {LottieComponent, Countdown} from '../';
 
-const Card = ({item, minutes = null, color, button = false, text = null}) => {
-  if (button) {
+let count = 0;
+
+const Card = ({item, color, page = '', minutes = null}) => {
+  const navigation = useNavigation();
+  if (page === 'Main') {
     return (
       <View style={styles.container}>
         <View style={styles.animation}>
@@ -12,10 +16,29 @@ const Card = ({item, minutes = null, color, button = false, text = null}) => {
         </View>
         <TouchableOpacity
           style={[styles.button, {backgroundColor: color}]}
-          //onPress={}
-        >
-          <Text style={styles.buttonText}>{text}</Text>
+          onPress={() => navigation.navigate('Working')}>
+          <Text style={styles.buttonText}>Start Pomodoro</Text>
         </TouchableOpacity>
+      </View>
+    );
+  } else if (page === 'Working') {
+    if (count < 4) {
+      count++;
+      return (
+        <View style={styles.container}>
+          <View style={styles.animation}>
+            <LottieComponent item={item} />
+          </View>
+          <Countdown minutes={1} color={color} toPage="SmallPause" />
+        </View>
+      );
+    }
+    return (
+      <View style={styles.container}>
+        <View style={styles.animation}>
+          <LottieComponent item={item} />
+        </View>
+        <Countdown minutes={1} color={color} toPage="LongPause" />
       </View>
     );
   } else {
@@ -24,7 +47,7 @@ const Card = ({item, minutes = null, color, button = false, text = null}) => {
         <View style={styles.animation}>
           <LottieComponent item={item} />
         </View>
-        <Countdown minutes={minutes} color={color} />
+        <Countdown minutes={minutes} color={color} toPage="Working" />
       </View>
     );
   }

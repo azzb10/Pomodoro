@@ -1,19 +1,31 @@
-import React from 'react';
-import {View, StyleSheet} from 'react-native';
-import CountDown from 'react-native-countdown-component';
+import React, {useState} from 'react';
+import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 
-const Countdown = ({minutes, color}) => {
+import CountDown from 'react-native-countdown-component';
+import {useNavigation} from '@react-navigation/native';
+
+const Countdown = ({minutes, color, toPage}) => {
+  const navigation = useNavigation();
+
   return (
     <View>
       <CountDown
         until={60 * minutes}
         size={30}
-        onFinish={() => alert('Finished')}
+        onFinish={() => {
+          navigation.navigate(`${toPage}`);
+        }}
         digitStyle={[styles.counterStyle, {borderColor: color}]}
         digitTxtStyle={styles.counterText}
         timeToShow={['M', 'S']}
         timeLabels={{m: 'Min', s: 'Sec'}}
       />
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate(`${toPage}`);
+        }}>
+        <Text>Go</Text>
+      </TouchableOpacity>
     </View>
   );
 };

@@ -8,10 +8,10 @@
 
 import React from 'react';
 
-import {Main, SmallPause, LongPause, Working} from './pages';
+import Routes from './routes';
 
 const App = () => {
-  return <Main />;
+  return <Routes />;
 };
 
 export default App;

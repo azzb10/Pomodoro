@@ -14,7 +14,7 @@ const LongPause = () => {
           subtitle="Take a 15 - 30 minutes break from your task"
         />
       </View>
-      <Card item={item} minutes={20} color="#e74c3c" />
+      <Card item={item} page={'LongPause'} color={'#e74c3c'} minutes={20} />
     </View>
   );
 };
