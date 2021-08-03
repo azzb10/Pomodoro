@@ -5,22 +5,17 @@ import {PageHeader, Card} from '../../components';
 import assets from '../../assets/assets';
 
 const Over = () => {
-  const item = assets.gif1;
+  const item = assets.gif5;
 
   return (
     <View style={styles.container}>
       <View style={styles.pageHeader}>
         <PageHeader
-          title="MyPomodoro"
-          subtitle="Beat procrastination and improve focus one pomodoro at a time"
+          title="Congratulations"
+          subtitle="Well Done! Click on continue to go to the next Pomodoro!"
         />
       </View>
-      <Card
-        item={item}
-        color={'#e74c3c'}
-        page="Over"
-        buttonText={'Start Pomodoro'}
-      />
+      <Card item={item} color={'#4834d4'} page="Over" buttonText={'Continue'} />
     </View>
   );
 };
@@ -28,7 +23,7 @@ const Over = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#e67e22',
+    backgroundColor: '#686de0',
   },
   pageHeader: {
     margin: 30,

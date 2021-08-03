@@ -10,7 +10,7 @@ const StackScreens = () => {
   return (
     <Stack.Navigator
       screenOptions={{headerShown: false}}
-      initialRouteName="Main">
+      initialRouteName="Over">
       <Stack.Screen name="Main" component={Main} />
       <Stack.Screen name="Working" component={Working} />
       <Stack.Screen name="SmallPause" component={SmallPause} />

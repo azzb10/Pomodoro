@@ -4,14 +4,7 @@ import {useNavigation, useFocusEffect} from '@react-navigation/native';
 
 import {LottieComponent, Countdown} from '../';
 
-const Card = ({
-  item,
-  color,
-  page = '',
-  minutes = null,
-  buttonText = null,
-  SecondButtonText = null,
-}) => {
+const Card = ({item, color, page = '', minutes = null, buttonText = null}) => {
   const navigation = useNavigation();
   const [count, setCount] = useState(0);
 
@@ -32,6 +25,15 @@ const Card = ({
           onPress={() => navigation.navigate('Working')}>
           <Text style={styles.buttonText}>{buttonText}</Text>
         </TouchableOpacity>
+        {page === 'Over' ? (
+          <TouchableOpacity
+            style={[styles.cancelButton, {color: color}]}
+            onPress={() => navigation.navigate('Main')}>
+            <Text style={styles.cancelButtonText}>Cancel</Text>
+          </TouchableOpacity>
+        ) : (
+          <></>
+        )}
       </View>
     );
   } else if (page === 'Working') {
@@ -42,6 +44,11 @@ const Card = ({
             <LottieComponent item={item} />
           </View>
           <Countdown minutes={minutes} color={color} toPage={'SmallPause'} />
+          <TouchableOpacity
+            style={styles.cancelButton}
+            onPress={() => navigation.navigate('Main')}>
+            <Text style={{color: color}}>Cancel</Text>
+          </TouchableOpacity>
         </View>
       );
     }
@@ -51,6 +58,11 @@ const Card = ({
           <LottieComponent item={item} />
         </View>
         <Countdown minutes={minutes} color={color} toPage={'LongPause'} />
+        <TouchableOpacity
+          style={styles.cancelButton}
+          onPress={() => navigation.navigate('Main')}>
+          <Text style={{color: color}}>Cancel</Text>
+        </TouchableOpacity>
       </View>
     );
   } else {
@@ -62,8 +74,13 @@ const Card = ({
         <Countdown
           minutes={minutes}
           color={color}
-          toPage={page === 'SmallPause' ? 'Working' : 'Main'}
+          toPage={page === 'SmallPause' ? 'Working' : 'Over'}
         />
+        <TouchableOpacity
+          style={styles.cancelButton}
+          onPress={() => navigation.navigate('Main')}>
+          <Text style={{color: color}}>Cancel</Text>
+        </TouchableOpacity>
       </View>
     );
   }
