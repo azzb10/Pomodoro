@@ -11,10 +11,10 @@ const LongPause = () => {
       <View style={styles.pageHeader}>
         <PageHeader
           title="Long Pause"
-          subtitle="Take a 15 - 30 minutes break from your task"
+          subtitle="Take a 20 minutes break from your task"
         />
       </View>
-      <Card item={item} page={'LongPause'} color={'#e74c3c'} minutes={1} />
+      <Card item={item} page={'LongPause'} color={'#e74c3c'} minutes={20} />
     </View>
   );
 };

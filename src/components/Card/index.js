@@ -28,7 +28,7 @@ const Card = ({item, color, page = '', minutes = null, buttonText = null}) => {
         {page === 'Over' ? (
           <TouchableOpacity
             style={[styles.cancelButton, {color: color}]}
-            onPress={() => navigation.navigate('Main')}>
+            onPress={() => navigation.popToTop()}>
             <Text style={styles.cancelButtonText}>Cancel</Text>
           </TouchableOpacity>
         ) : (
@@ -46,7 +46,7 @@ const Card = ({item, color, page = '', minutes = null, buttonText = null}) => {
           <Countdown minutes={minutes} color={color} toPage={'SmallPause'} />
           <TouchableOpacity
             style={styles.cancelButton}
-            onPress={() => navigation.navigate('Main')}>
+            onPress={() => navigation.popToTop()}>
             <Text style={{color: color}}>Cancel</Text>
           </TouchableOpacity>
         </View>
@@ -60,7 +60,7 @@ const Card = ({item, color, page = '', minutes = null, buttonText = null}) => {
         <Countdown minutes={minutes} color={color} toPage={'LongPause'} />
         <TouchableOpacity
           style={styles.cancelButton}
-          onPress={() => navigation.navigate('Main')}>
+          onPress={() => navigation.popToTop()}>
           <Text style={{color: color}}>Cancel</Text>
         </TouchableOpacity>
       </View>
@@ -78,7 +78,7 @@ const Card = ({item, color, page = '', minutes = null, buttonText = null}) => {
         />
         <TouchableOpacity
           style={styles.cancelButton}
-          onPress={() => navigation.navigate('Main')}>
+          onPress={() => navigation.popToTop()}>
           <Text style={{color: color}}>Cancel</Text>
         </TouchableOpacity>
       </View>

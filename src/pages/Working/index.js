@@ -6,6 +6,7 @@ import {PageHeader, Card} from '../../components';
 
 const Working = () => {
   const item = assets.gif2;
+
   return (
     <View style={styles.container}>
       <View style={styles.pageHeader}>
@@ -14,7 +15,7 @@ const Working = () => {
           subtitle="Focus on the work until the clock stops"
         />
       </View>
-      <Card item={item} color={'#8feea1'} page="Working" minutes={1} />
+      <Card item={item} color={'#8feea1'} page="Working" minutes={25} />
     </View>
   );
 };
