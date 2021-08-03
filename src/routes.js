@@ -4,7 +4,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
 
-import {Main, Working, SmallPause, LongPause} from './pages';
+import {Main, Working, SmallPause, LongPause, Over} from './pages';
 
 const StackScreens = () => {
   return (
@@ -15,6 +15,7 @@ const StackScreens = () => {
       <Stack.Screen name="Working" component={Working} />
       <Stack.Screen name="SmallPause" component={SmallPause} />
       <Stack.Screen name="LongPause" component={LongPause} />
+      <Stack.Screen name="Over" component={Over} />
     </Stack.Navigator>
   );
 };

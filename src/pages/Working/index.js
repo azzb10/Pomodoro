@@ -14,7 +14,7 @@ const Working = () => {
           subtitle="Focus on the work until the clock stops"
         />
       </View>
-      <Card item={item} color={'#8feea1'} page="Working" />
+      <Card item={item} color={'#8feea1'} page="Working" minutes={1} />
     </View>
   );
 };

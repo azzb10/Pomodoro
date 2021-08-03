@@ -4,7 +4,7 @@ import {View, StyleSheet} from 'react-native';
 import {PageHeader, Card} from '../../components';
 import assets from '../../assets/assets';
 
-const Main = () => {
+const Over = () => {
   const item = assets.gif1;
 
   return (
@@ -18,7 +18,7 @@ const Main = () => {
       <Card
         item={item}
         color={'#e74c3c'}
-        page="Main"
+        page="Over"
         buttonText={'Start Pomodoro'}
       />
     </View>
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Main;
+export default Over;

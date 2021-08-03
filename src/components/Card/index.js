@@ -1,14 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useFocusEffect} from '@react-navigation/native';
 
 import {LottieComponent, Countdown} from '../';
 
-let count = 0;
-
-const Card = ({item, color, page = '', minutes = null}) => {
+const Card = ({
+  item,
+  color,
+  page = '',
+  minutes = null,
+  buttonText = null,
+  SecondButtonText = null,
+}) => {
   const navigation = useNavigation();
-  if (page === 'Main') {
+  const [count, setCount] = useState(0);
+
+  useFocusEffect(
+    React.useCallback(() => {
+      // eslint-disable-next-line no-shadow
+      setCount(count => count + 1);
+    }, []),
+  );
+  if (page === 'Main' || page === 'Over') {
     return (
       <View style={styles.container}>
         <View style={styles.animation}>
@@ -17,19 +30,18 @@ const Card = ({item, color, page = '', minutes = null}) => {
         <TouchableOpacity
           style={[styles.button, {backgroundColor: color}]}
           onPress={() => navigation.navigate('Working')}>
-          <Text style={styles.buttonText}>Start Pomodoro</Text>
+          <Text style={styles.buttonText}>{buttonText}</Text>
         </TouchableOpacity>
       </View>
     );
   } else if (page === 'Working') {
     if (count < 4) {
-      count++;
       return (
         <View style={styles.container}>
           <View style={styles.animation}>
             <LottieComponent item={item} />
           </View>
-          <Countdown minutes={1} color={color} toPage="SmallPause" />
+          <Countdown minutes={minutes} color={color} toPage={'SmallPause'} />
         </View>
       );
     }
@@ -38,7 +50,7 @@ const Card = ({item, color, page = '', minutes = null}) => {
         <View style={styles.animation}>
           <LottieComponent item={item} />
         </View>
-        <Countdown minutes={1} color={color} toPage="LongPause" />
+        <Countdown minutes={minutes} color={color} toPage={'LongPause'} />
       </View>
     );
   } else {
@@ -47,7 +59,11 @@ const Card = ({item, color, page = '', minutes = null}) => {
         <View style={styles.animation}>
           <LottieComponent item={item} />
         </View>
-        <Countdown minutes={minutes} color={color} toPage="Working" />
+        <Countdown
+          minutes={minutes}
+          color={color}
+          toPage={page === 'SmallPause' ? 'Working' : 'Main'}
+        />
       </View>
     );
   }
