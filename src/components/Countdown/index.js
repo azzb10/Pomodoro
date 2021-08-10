@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 
 import CountDown from 'react-native-countdown-component';
 import {useIsFocused, useNavigation} from '@react-navigation/native';
@@ -22,12 +22,6 @@ const Countdown = ({minutes, color, toPage}) => {
           timeToShow={['M', 'S']}
           timeLabels={{m: 'Min', s: 'Sec'}}
         />
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate(`${toPage}`);
-          }}>
-          <Text>Go</Text>
-        </TouchableOpacity>
       </View>
     );
   }
