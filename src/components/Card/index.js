@@ -20,19 +20,18 @@ const Card = ({item, color, page = '', minutes = null, buttonText = null}) => {
         <View style={styles.animation}>
           <LottieComponent item={item} />
         </View>
-        <TouchableOpacity
-          style={[styles.button, {backgroundColor: color}]}
-          onPress={() => navigation.navigate('Working')}>
-          <Text style={styles.buttonText}>{buttonText}</Text>
-        </TouchableOpacity>
         {page === 'Over' ? (
           <TouchableOpacity
-            style={[styles.cancelButton, {color: color}]}
+            style={[styles.button, {backgroundColor: color}]}
             onPress={() => navigation.popToTop()}>
-            <Text style={styles.cancelButtonText}>Cancel</Text>
+            <Text style={styles.buttonText}>{buttonText}</Text>
           </TouchableOpacity>
         ) : (
-          <></>
+          <TouchableOpacity
+            style={[styles.button, {backgroundColor: color}]}
+            onPress={() => navigation.navigate('Working')}>
+            <Text style={styles.buttonText}>{buttonText}</Text>
+          </TouchableOpacity>
         )}
       </View>
     );
@@ -44,9 +43,7 @@ const Card = ({item, color, page = '', minutes = null, buttonText = null}) => {
             <LottieComponent item={item} />
           </View>
           <Countdown minutes={minutes} color={color} toPage={'SmallPause'} />
-          <TouchableOpacity
-            style={styles.cancelButton}
-            onPress={() => navigation.popToTop()}>
+          <TouchableOpacity onPress={() => navigation.popToTop()}>
             <Text style={{color: color}}>Cancel</Text>
           </TouchableOpacity>
         </View>
@@ -58,9 +55,7 @@ const Card = ({item, color, page = '', minutes = null, buttonText = null}) => {
           <LottieComponent item={item} />
         </View>
         <Countdown minutes={minutes} color={color} toPage={'LongPause'} />
-        <TouchableOpacity
-          style={styles.cancelButton}
-          onPress={() => navigation.popToTop()}>
+        <TouchableOpacity onPress={() => navigation.popToTop()}>
           <Text style={{color: color}}>Cancel</Text>
         </TouchableOpacity>
       </View>
@@ -76,9 +71,7 @@ const Card = ({item, color, page = '', minutes = null, buttonText = null}) => {
           color={color}
           toPage={page === 'SmallPause' ? 'Working' : 'Over'}
         />
-        <TouchableOpacity
-          style={styles.cancelButton}
-          onPress={() => navigation.popToTop()}>
+        <TouchableOpacity onPress={() => navigation.popToTop()}>
           <Text style={{color: color}}>Cancel</Text>
         </TouchableOpacity>
       </View>
@@ -93,10 +86,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignSelf: 'center',
     alignItems: 'center',
-    padding: 20,
-    margin: 40,
+    padding: 5,
+    margin: 20,
     borderRadius: 20,
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
   },
   animation: {
     height: '60%',
